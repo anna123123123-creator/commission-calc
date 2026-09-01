@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>分销佣金计算器 · Commission Calculator</title>
+<meta name="description" content="免费开源、纯浏览器运行的分销佣金计算工具，输入售价、成本和一二级分销比例，自动算出各级佣金和平台净利润。不联网。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>分销<span class="accent">佣金</span>计算器</h1>
+    <p class="tagline">输入商品售价、成本价和一级、二级分销佣金比例，自动算出各级分销商能拿到多少佣金，以及平台最终净利润。纯前端计算，不联网。</p>
+  </header>
+
+  <main class="layout">
+    <section class="controls">
+      <div class="field">
+        <label>商品售价（元）</label>
+        <input id="priceInput" type="number" value="199" min="0" step="1">
+      </div>
+      <div class="field">
+        <label>商品成本价（元）</label>
+        <input id="costInput" type="number" value="80" min="0" step="1">
+      </div>
+      <div class="field">
+        <label>一级分销佣金比例（%，占售价）</label>
+        <input id="level1RateInput" type="number" value="15" min="0" max="100" step="1">
+      </div>
+      <div class="field checkbox-field">
+        <label><input id="hasLevel2Check" type="checkbox" checked> 启用二级分销</label>
+      </div>
+      <div class="field">
+        <label>二级分销佣金比例（%，占售价）</label>
+        <input id="level2RateInput" type="number" value="5" min="0" max="100" step="1">
+      </div>
+    </section>
+
+    <section class="result-wrap">
+      <div class="result-card">
+        <div class="result-num" id="profitOut">--</div>
+        <div class="result-label">平台净利润</div>
+      </div>
+      <div class="detail-box" id="breakdown"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>MIT 协议开源，纯前端计算，不联网、不上传数据。</p>
+    <p>想要商品、订单、佣金、多级分销一体的完整分销商城系统？<a href="https://inzyxuashop.com/fenxiao-yuanma.html" target="_blank" rel="noopener">看看完整版分销商城源码 →</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
